@@ -178,6 +178,13 @@ a:hover {
 	width:inherit;
 }
 
+#highcharts-lB6AAxin6, #highcharts-UiVHHH_fg{
+	width:inherit;
+	position: absolute;
+	top: 200px;
+	left: 15%;
+	right: 15%;
+}
 .item{
 	height:95vh;
 }
