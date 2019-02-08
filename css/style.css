@@ -796,7 +796,7 @@ figure.publication-image figcaption {
 	text-align: right;
 }
 
-figure.publication-image h4,
+figure.publication-image h6,
 figure.publication-image p {
 	position: absolute;
 	right: 30px;
@@ -827,21 +827,24 @@ figure.publication-image p {
 	height: 100%;
 }
 
-figure.publication-image h4 {
+figure.publication-image h6 {
 	top: 30px;
 	color:#fff;
+	background-color: rgba(0,0,0,0.5);
+
+padding: 0.5em;
 	-webkit-transition: -webkit-transform 0.35s;
 	transition: transform 0.35s;
 	-webkit-transform: translate3d(0,20px,0);
 	transform: translate3d(0,20px,0);
 }
 
-figure.publication-image:hover h4 {
+figure.publication-image:hover h6 {
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
 
-figure.publication-image h4::after {
+figure.publication-image h6::after {
 	position: absolute;
 	top: 100%;
 	left: 0;
@@ -852,7 +855,7 @@ figure.publication-image h4::after {
 	-webkit-transform: translate3d(0,40px,0);
 	transform: translate3d(0,40px,0);
 }
-figure.publication-image h4::after{
+figure.publication-image h6::after{
 	opacity: 0;
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
@@ -865,7 +868,7 @@ figure.publication-image p {
 	transition: opacity 0.35s, transform 0.35s;
 }
 
-figure.publication-image:hover h4::after,
+figure.publication-image:hover h6::after,
 figure.publication-image:hover p {
 	opacity: 1;
 	-webkit-transform: translate3d(0,0,0);
