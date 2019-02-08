@@ -12,26 +12,8 @@
 	
 	
 </script>
-	  <script>
-		function youTubes_makeDynamic() {
-			var $ytIframes = $('iframe[src*="youtube.com"]');
-			$ytIframes.each(function (i,e) {
-				var $ytFrame = $(e);
-				var ytKey; var tmp = $ytFrame.attr('src').split(/\//); tmp = tmp[tmp.length - 1]; tmp = tmp.split('?'); ytKey = tmp[0];
-				var $ytLoader = $('<div class="ytLoader">');
-				$ytLoader.append($('<img class="cover" src="https://i.ytimg.com/vi/'+ytKey+'/hqdefault.jpg">'));
-				$ytLoader.append($('<img class="playBtn" src="play_button.png">'));
-				$ytLoader.data('$ytFrame',$ytFrame);
-				$ytFrame.replaceWith($ytLoader);
-				$ytLoader.click(function () {
-					var $ytFrame = $ytLoader.data('$ytFrame');
-					$ytFrame.attr('src',$ytFrame.attr('src')+'?autoplay=1');
-					$ytLoader.replaceWith($ytFrame);
-				});
-			});
-		};
-		$(document).ready(function () {youTubes_makeDynamic()});
-	</script>
+	  
+	  
 <script>
 function openArticle(url, title, w, h) {
 var left = (screen.width/2)-(w/2);
@@ -100,8 +82,9 @@ return window.open(url, title, 'toolbar=no, location=no, directories=no, status=
 			<div class="col-md-4">
 				<figure class="publication-image">
 					<div class="videoWrapper">
-					<iframe class="img-responsive" width="540" height="415" src="https://www.youtube.com/embed/86EHPaIWYHY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					 <div class="youtube-player" data-id="86EHPaIWYHY" data-related="0" data-control="1" data-info="0" data-fullscreen="1" style="width:100%;display: block; position: relative;cursor: pointer;max-height:415px;height:100%; overflow:hidden;padding-bottom:56.25%;margin:0 auto"> <img src="//i.ytimg.com/vi/86EHPaIWYHY/hqdefault.jpg" style="bottom: -100%; display: block; left: 0; margin: auto; max-width: 100%; width: 100%;height:auto; position: absolute; right: 0; top: -100%;"> <div style="height: 72px; width: 72px; left: 50%; top: 50%; margin-left: -36px; margin-top: -36px; position: absolute; background: url('http://i.imgur.com/TxzC70f.png') no-repeat;"></div> </div> <iframe class="img-responsive" width="540" height="415" src="https://www.youtube.com/embed/86EHPaIWYHY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
+					
 					<figcaption>
 						
 						<h6><b>The Pricing of Tail Risk and the Equity Premium across the Globe</b></h6>
@@ -221,5 +204,26 @@ return window.open(url, title, 'toolbar=no, location=no, directories=no, status=
 		}	) 
 		.init();
 	</script>	
+		<script> (function() { var v = document.getElementsByClassName("youtube-player"); for (var n = 0; n < v.length; n++) { v[n].onclick = function () { var iframe = document.createElement("iframe"); iframe.setAttribute("src", "//www.youtube.com/embed/" + this.dataset.id + "?autoplay=1&autohide=2&border=0&wmode=opaque&enablejsapi=1&rel="+ this.dataset.related +"&controls="+this.dataset.control+"&showinfo=" + this.dataset.info); iframe.setAttribute("frameborder", "0"); iframe.setAttribute("id", "youtube-iframe"); iframe.setAttribute("style", "width: 100%; height: 100%; position: absolute; top: 0; left: 0;"); if (this.dataset.fullscreen == 1){ iframe.setAttribute("allowfullscreen", ""); } while (this.firstChild) { this.removeChild(this.firstChild); } this.appendChild(iframe); }; } })(); </script>
+		<script>
+		function youTubes_makeDynamic() {
+			var $ytIframes = $('iframe[src*="youtube.com"]');
+			$ytIframes.each(function (i,e) {
+				var $ytFrame = $(e);
+				var ytKey; var tmp = $ytFrame.attr('src').split(/\//); tmp = tmp[tmp.length - 1]; tmp = tmp.split('?'); ytKey = tmp[0];
+				var $ytLoader = $('<div class="ytLoader">');
+				$ytLoader.append($('<img class="cover" src="https://i.ytimg.com/vi/'+ytKey+'/hqdefault.jpg">'));
+				$ytLoader.append($('<img class="playBtn" src="play_button.png">'));
+				$ytLoader.data('$ytFrame',$ytFrame);
+				$ytFrame.replaceWith($ytLoader);
+				$ytLoader.click(function () {
+					var $ytFrame = $ytLoader.data('$ytFrame');
+					$ytFrame.attr('src',$ytFrame.attr('src')+'?autoplay=1');
+					$ytLoader.replaceWith($ytFrame);
+				});
+			});
+		};
+		$(document).ready(function () {youTubes_makeDynamic()});
+	</script>
   </body>
 </html>
