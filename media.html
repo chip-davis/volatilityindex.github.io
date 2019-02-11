@@ -83,7 +83,6 @@ return window.open(url, title, 'toolbar=no, location=no, directories=no, status=
 				<figure class="publication-image">
 					<div class="videoWrapper">
 						
-      <i class="fa fa-youtube-play homeVideoPlayButton"></i>  
 						<iframe width="560" height="315" src="https://www.youtube.com/embed/86EHPaIWYHY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
 					<figcaption>
@@ -217,7 +216,7 @@ return window.open(url, title, 'toolbar=no, location=no, directories=no, status=
 				var ytKey; var tmp = $ytFrame.attr('src').split(/\//); tmp = tmp[tmp.length - 1]; tmp = tmp.split('?'); ytKey = tmp[0];
 				var $ytLoader = $('<div class="ytLoader">');
 				$ytLoader.append($('<img class="cover" src="https://i.ytimg.com/vi/'+ytKey+'/hqdefault.jpg" width="350" height="222" style="vertical-align:top; position: relative; top: 0%;transform: translateY(-12%);" > '));
-				$ytLoader.append($('<img class="playBtn" src="play_button.png">'));
+				$ytLoader.append($('<img class="playBtn" src="img/play_button.png">'));
 				$ytLoader.data('$ytFrame',$ytFrame);
 				$ytFrame.replaceWith($ytLoader);
 				$ytLoader.click(function () {
