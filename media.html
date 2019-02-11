@@ -82,9 +82,10 @@ return window.open(url, title, 'toolbar=no, location=no, directories=no, status=
 			<div class="col-md-4">
 				<figure class="publication-image">
 					<div class="videoWrapper">
+						<div class="homeVideoThumbnail home-videoplayer" id="vid-86EHPaIWYHY"><img src="//img.youtube.com/vi/86EHPaIWYHY/0.jpg" /></div>
+      <i class="fa fa-youtube-play homeVideoPlayButton"></i>  
 						<iframe width="560" height="315" src="https://www.youtube.com/embed/86EHPaIWYHY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
-					
 					<figcaption>
 						
 						<h6><b>The Pricing of Tail Risk and the Equity Premium across the Globe</b></h6>
@@ -92,6 +93,7 @@ return window.open(url, title, 'toolbar=no, location=no, directories=no, status=
 					</figcaption>			
 				</figure>
 			</div>
+			
 			<div class="col-md-4">
 				<figure class="publication-image">
 					<div class="videoWrapper">
@@ -104,6 +106,7 @@ return window.open(url, title, 'toolbar=no, location=no, directories=no, status=
 					</figcaption>			
 				</figure>
 			</div>
+			
 			<div class="col-md-4">
 				<figure class="publication-image">
 					<div class="videoWrapper">
@@ -135,11 +138,11 @@ return window.open(url, title, 'toolbar=no, location=no, directories=no, status=
 			<div class="col-md-4">
 				<figure class="publication-image">
 					<a onclick="openArticle('https://insight.kellogg.northwestern.edu/article/what-will-it-take-to-regulate-the-stock-markets', 'Kellogg Insight',600,600);" href="javascript:void(0);">
-						<img src="img/insight.jpg" alt="" class="img-responsive" height="180" width="400"/></a>
+						<img src="img/insight.jpg" alt="" class="img-responsive" height="180" width="400"/>
 					<figcaption>
 						<h6><b>What Will It Take to Regulate the Stock Markets?</b></h6>
 						<p>Kellogg Insight</p>				
-					</figcaption>			
+					</figcaption>	</a>		
 				</figure>
 			</div>
 			<div class="col-md-4">
@@ -206,6 +209,7 @@ return window.open(url, title, 'toolbar=no, location=no, directories=no, status=
 	</script>	
 		
 		<script>
+			
 		function youTubes_makeDynamic() {
 			var $ytIframes = $('iframe[src*="youtube.com"]');
 			$ytIframes.each(function (i,e) {
