@@ -212,10 +212,7 @@ a:hover {
 	text-align: center;
 }
 
-.playBtn{
-	align-content: center;
-	z-index: 10;
-}
+
 
 
 .carousel-caption  h2 {
@@ -771,6 +768,14 @@ ul.social_icons li  a i{
 	opacity: 0.8;
 }
 
+.playBtn{
+	align-content: center;
+	z-index: 10;
+	position: relative;
+	display: block;
+	height: 2px;
+	width: 2px;
+}
 .gallery figure figcaption {
 	padding:2em;
 	color: #fff;
