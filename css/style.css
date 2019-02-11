@@ -212,6 +212,12 @@ a:hover {
 	text-align: center;
 }
 
+.playBtn{
+	align-content: center;
+	z-index: 10;
+}
+
+
 .carousel-caption  h2 {
 	font-size:50px;
 	color: #fff;
