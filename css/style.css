@@ -247,10 +247,10 @@ a:hover {
 .carousel-inner .form-inline .form-group button[type="livedemo"]:hover {
 	color:#272727;
 	opacity: 0.8;
-	-webkit-transition: color 300ms, background-color 300ms;
-  -moz-transition: color 300ms, background-color 300ms;
-  -o-transition:  color 300ms, background-color 300ms;
-  transition:  color 300ms, background-color 300ms;
+	-webkit-transition: color 900ms, background-color 900ms;
+  -moz-transition: color 900ms, background-color 900ms;
+  -o-transition:  color 900ms, background-color 900ms;
+  transition:  color 900ms, background-color 900ms;
 }
 
 .carousel-inner .form-inline .form-group button[type="getnow"]{
@@ -267,10 +267,10 @@ a:hover {
 	color:#fff;
 	border-color:#fff;
 	background:#65AAF0;
-	-webkit-transition: color 300ms, background-color 300ms;
-  -moz-transition: color 300ms, background-color 300ms;
-  -o-transition:  color 300ms, background-color 300ms;
-  transition:  color 300ms, background-color 300ms;
+	-webkit-transition: color 900ms, background-color 900ms;
+  -moz-transition: color 900ms, background-color 900ms;
+  -o-transition:  color 900ms, background-color 900ms;
+  transition:  color 900ms, background-color 900ms;
 }
 
 .form-inline {
