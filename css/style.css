@@ -145,7 +145,11 @@ a:hover {
   position: relative;
 	
 }
-
+#carouselButtons {
+    margin-left: 100px;
+    position: absolute;
+    bottom: 0px;
+}
 #carousel-slider .carousel-indicators {
   bottom: -25px;
 }
@@ -247,10 +251,10 @@ a:hover {
 .carousel-inner .form-inline .form-group button[type="livedemo"]:hover {
 	color:#272727;
 	opacity: 0.8;
-	-webkit-transition: color 900ms, background-color 900ms;
-  -moz-transition: color 900ms, background-color 900ms;
-  -o-transition:  color 900ms, background-color 900ms;
-  transition:  color 900ms, background-color 900ms;
+	-webkit-transition: color 1200ms, background-color 1200ms;
+  -moz-transition: color 1200ms, background-color 1200ms;
+  -o-transition:  color 1200ms, background-color 1200ms;
+  transition:  color 1200ms, background-color 1200ms;
 }
 
 .carousel-inner .form-inline .form-group button[type="getnow"]{
@@ -267,10 +271,10 @@ a:hover {
 	color:#fff;
 	border-color:#fff;
 	background:#65AAF0;
-	-webkit-transition: color 900ms, background-color 900ms;
-  -moz-transition: color 900ms, background-color 900ms;
-  -o-transition:  color 900ms, background-color 900ms;
-  transition:  color 900ms, background-color 900ms;
+	-webkit-transition: color 1200ms, background-color 1200ms;
+  -moz-transition: color 1200ms, background-color 1200ms;
+  -o-transition:  color 1200ms, background-color 1200ms;
+  transition:  color 1200ms, background-color 1200ms;
 }
 
 .form-inline {

@@ -82,6 +82,7 @@ return window.open(url, title, 'toolbar=no, location=no, directories=no, status=
 					<li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
 					<li data-target="#carousel-slider" data-slide-to="1"></li>
 					<li data-target="#carousel-slider" data-slide-to="2"></li>
+					<li data-target="#carousel-slider" data-slide-to="3"></li>
 				</ol>
 
 				<div class="carousel-inner" >
@@ -192,6 +193,15 @@ return window.open(url, title, 'toolbar=no, location=no, directories=no, status=
 				<a class=" right carousel-control hidden-xs"href="#carousel-slider" data-slide="next">
 					<i class="fa fa-angle-right"></i> 
 				</a>
+				<div id="carouselButtons">
+    <button id="playButton" type="button" class="btn btn-default btn-xs"  style="display: none;">
+        <span class="glyphicon glyphicon-play"></span>
+     </button>
+    <button id="pauseButton" type="button" class="btn btn-default btn-xs">
+        <span class="glyphicon glyphicon-pause"></span>
+    </button>
+					
+</div>
 			</div> <!--/#carousel-slider-->
 		</div><!--/#about-slider-->
 	</div><!--/#slider-->
@@ -477,6 +487,21 @@ return window.open(url, title, 'toolbar=no, location=no, directories=no, status=
 			});
 		};
 		$(document).ready(function () {youTubes_makeDynamic()});
+		  
+		  $('#playButton').click(function () {
+    $('#carousel-slider').carousel('cycle');
+    $('#pauseButton').show();
+	 $('#playButton').hide();
+});
+$('#pauseButton').click(function () {
+    $('#carousel-slider').carousel('pause');
+	$('#pauseButton').hide();
+	 $('#playButton').show();
+});
+$('#carousel-slider').carousel({
+    interval:12000,
+    pause: "false"
+});		 
 	  </script>
 	<!-- Submit the Form to Google Using "AJAX" -->
  
