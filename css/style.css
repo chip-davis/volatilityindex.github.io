@@ -137,7 +137,7 @@ a:hover {
 .sidenav {
     top: 12%;
     height: 100%;
-    width: 160px;
+    width: 200px;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -169,7 +169,7 @@ a:hover {
 }
 
 .main {
-    margin-left: 160px; /* Same as the width of the sidenav */
+    margin-left: 200px; /* Same as the width of the sidenav */
 
 
 }
