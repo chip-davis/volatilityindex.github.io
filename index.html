@@ -63,6 +63,7 @@ return window.open(url, title, 'toolbar=no, location=no, directories=no, status=
 					<div class="menu">
 						<ul class="nav nav-tabs" role="tablist" id="myList">
 							<li role="presentation"><a href="index.html" class="myList active" onClick="changeClass(this)">Home</a></li>
+							<li role="presentation"><a href="methodology.html" class="myList" onClick="changeClass(this)">Methodology</a></li>
 							<li role="presentation"><a href="about.html" class="myList" onClick="changeClass(this)">About Us</a></li>
 							<li role="presentation"><a href="research.html" class="myList" onClick="changeClass(this)">Research</a></li>
 							<li role="presentation"><a href="#research" class="myList" onClick="changeClass(this)">Media</a></li>
@@ -71,8 +72,21 @@ return window.open(url, title, 'toolbar=no, location=no, directories=no, status=
 					</div>
 				</div>		
             </div><!--/.container-->
-        </nav><!--/nav-->		
-    
+        </nav><!--/nav-->
+
+		<div class="sidenav">
+			<div class="sidenav-header">
+				<h4> Avg Series</h4>
+			</div>
+			<a href="#">NASDAQ</a>
+			<a href="#">LJV</a>
+			<div class="sidenav-header">
+				<h4> Other Series</h4>
+			</div>
+			<a href="#">NASDAQ</a>
+			<a href="#">LJV</a>
+		</div>
+		<div class="main">
 	
 	<div class="slider">		
 		<div id="about-slider">
@@ -237,8 +251,7 @@ return window.open(url, title, 'toolbar=no, location=no, directories=no, status=
 				<i class="fa fa-book-open"></i>
 				<h3>Publication1</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum nam numquam voluptates cumque inventore, quibusdam corporis consequatur amet.</p>
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/is2SSY2eZcM?start=120&amp;end=420" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-			</div> 
+			</div>
 			<div class="col-md-3 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
 				<i class="fa fa-book"></i>
 				<h3>Publication2</h3>
@@ -433,7 +446,7 @@ return window.open(url, title, 'toolbar=no, location=no, directories=no, status=
 								
 		</div>				
 	</div>
-	
+		</div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script   src="https://code.jquery.com/jquery-3.3.1.js"   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="   crossorigin="anonymous"></script>		
     <!-- Include all compiled plugins (below), or include individual files as needed -->
