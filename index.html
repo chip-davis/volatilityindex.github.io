@@ -3,7 +3,9 @@
   <head>
 	  <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130747721-1"></script>
-<script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+
+      <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -64,9 +66,9 @@ return window.open(url, title, 'toolbar=no, location=no, directories=no, status=
 						<ul class="nav nav-tabs" role="tablist" id="myList">
 							<li role="presentation"><a href="index.html" class="myList active" onClick="changeClass(this)">Home</a></li>
 							<li role="presentation"><a href="methodology.html" class="myList" onClick="changeClass(this)">Methodology</a></li>
-							<li role="presentation"><a href="about.html" class="myList" onClick="changeClass(this)">About Us</a></li>
 							<li role="presentation"><a href="research.html" class="myList" onClick="changeClass(this)">Research</a></li>
-							<li role="presentation"><a href="#research" class="myList" onClick="changeClass(this)">Media</a></li>
+							<li role="presentation"><a href="media.html" class="myList" onClick="changeClass(this)">Media</a></li>
+                            <li role="presentation"><a href="about.html" class="myList" onClick="changeClass(this)">About Us</a></li>
 							<li role="presentation"><a href="#contact" class="myList" onClick="changeClass(this)">Contact</a></li>						
 						</ul>
 					</div>
@@ -76,15 +78,15 @@ return window.open(url, title, 'toolbar=no, location=no, directories=no, status=
 
 		<div class="sidenav">
 			<div class="sidenav-header">
-				<h4> Avg Series</h4>
+				<h4>Tail-Indices Series</h4>
 			</div>
 			<a href="#">NASDAQ</a>
 			<a href="#">LJV</a>
-			<div class="sidenav-header">
+			<!--<div class="sidenav-header">
 				<h4> Tail-Index Series</h4>
 			</div>
 			<a href="#">NASDAQ</a>
-			<a href="#">LJV</a>
+			<a href="#">LJV</a>-->
 		</div>
 		<div class="main">
 	
@@ -225,16 +227,14 @@ return window.open(url, title, 'toolbar=no, location=no, directories=no, status=
 			<div class="text-center">
 				<h2>About Us </h2>
 				<div class="col-md-10 col-md-offset-1">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat quod voluptate consequuntur ad quasi, 
-					dolores obcaecati ex aliquid, dolor provident accusamus omnis dolorum ipsam. Voluptatem ipsum expedita, corporis facilis laborum asperiores nostrum! 
-					Amet porro numquam ratione temporibus quia dolorem sint lorem voluptates quasi mollitia.</p>
+					<p>This research is a joint venture between Professor Torben G. Andersen and Professor Viktor Todorov. They are both professors at Kellogg School of Management, Northwestern University.</p>
 				</div>
 		
 				<div class="col-md-6 col-sm-6 col-xs-6">
-					<div class="btn-gamp"><a href="#">Learn More</a></div>
+					<div class="btn-gamp"><a href="about.html">Learn More</a></div>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-6">
-					<div class="gamp-btn"><a href="#">download</a></div>
+					<div class="gamp-btn"><a href="methodology.html">Methodology</a></div>
 				</div>
 				
 			</div>	
@@ -283,7 +283,7 @@ return window.open(url, title, 'toolbar=no, location=no, directories=no, status=
 	<div id ="research" class="gallery">
 		<div class="text-center">
 			<h2>Media</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat quod voluptate consequuntur ad quasi, dolores obcaecati ex aliquid, dolor provident </p>
+			<p>Media related to tail risk and volatility.</p>
 		</div>
 		<div class="container">		
 			<div class="col-md-4">
@@ -348,7 +348,7 @@ return window.open(url, title, 'toolbar=no, location=no, directories=no, status=
 					</figcaption></a>			
 				</figure>
 			</div>
-			<div class="col-md-4">
+			<!--<div class="col-md-4">
 				<figure class="publication-image">
 					<img src="img/1.jpg" alt="" class="img-responsive"/>
 					<figcaption>
@@ -356,60 +356,55 @@ return window.open(url, title, 'toolbar=no, location=no, directories=no, status=
 						<p>Media synopsis</p>				
 					</figcaption>			
 				</figure>
-			</div>
+			</div>-->
 		</div>
 	</div>
 	  	<footer>
 		<div id="contact">
 		<div class="container">
-			<div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-				<h4>About Us</h4>
-				<p>Volatility Series is a joint venture of Professors at Kellogg School of 
-				management</p>						
-				<div class="contact-info">
+			<div class="col-md-5 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+				<h4>Contact US</h4>
+				<p>This research is a joint venture between Professor Torben G. Andersen and Professor Viktor Todorov.</p>
+				<br>
+                <div class="contact-info">
 					<ul>
-						<li><i class="fa fa-home fa"></i>Kellogg School of Management, Global-Hub, Evanston </li>
-						<li><i class="fa fa-phone fa"></i> +38 000 129900</li>
-						<li><i class="fa fa-envelope fa"></i> info@Kellogg.northwestern.edu</li>
+						<li><i class="fa fa-university fa"></i> Kellogg School of Management, Evanston </li>
+                       <li> <a class="link" href="#"  style="color:#fff;" data-toggle="tooltip" data-placement="top" title="Click to Copy!" onclick="changeTooltip(this)"><i class="fab fa-envelope fa"></i> v-todorov@kellogg.northwestern.edu</a>
+                       /
+                        <a class="link" href="#"  style="color:#fff;" data-toggle="tooltip" data-placement="top" title="Click to Copy!" onclick="changeTooltip(this)"><i class="fa fa-phone fa"></i> 847-467-0694</a>
+                       </li>
+						<li><a class="link" href="#"  style="color:#fff;"  data-toggle="tooltip" data-placement="top" title="Click to Copy!" onclick="changeTooltip(this)"><i class="fab fa-envelope fa"></i> t-andersen@kellogg.northwestern.edu</a>
+                            /
+                            <a class="link" href="#"  style="color:#fff;"  data-toggle="tooltip" data-placement="top" title="Click to Copy!" onclick="changeTooltip(this)"><i class="fa fa-phone fa"></i> 847-467-1285</a>
+                        </li>
+
 					</ul>
 				</div>
 			</div>
+
 			
-			
-			<div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">				
+			<div class="col-md-5 wow fadeInDown col-md-offset-2" data-wow-duration="1000ms" data-wow-delay="900ms">
 				<div class="">
 					<h4>Newsletter Registration</h4>
 					<p>Subscribe today to receive the latest volatility series via email. </p>
-					<form class="gform" method="post" data-email="eshi.jalote@kellogg.northwestern.edu" action="https://script.google.com/macros/s/AKfycbzLD2-k0cxXx0jYfj3kHIuBIGITIs8xyYL43Azb/exec">
+					<form class="gform" method="post" data-email="indexvolatility@gmail.com" action="https://script.google.com/macros/s/AKfycbzLD2-k0cxXx0jYfj3kHIuBIGITIs8xyYL43Azb/exec">
   <!--input id must be honeypot or else it wont work-->
   <label class="sr-only">Keep this field blank</label>
   <input id="honeypot" type="text" name="honeypot" value="" />
-  <!--the rest of your form-->
 
-					<!--<div class="btn-gamp">		
-						<input type="email" class="form-control" id="exampleInputEmail3" placeholder="Enter Email">
-					</div>
-					<div class="btn-gamp">
-						<a type="submit" class="btn btn-default">Subscribe</a>
-					</div>-->
 				<div class="form-elements">
 					<div class="btn-gamp">
 						  <fieldset class="pure-group btn-gamp">
-							<label for="name">Name: </label>
+							<!--<label for="name">Name: </label>-->
 							<input id="name" name="name" placeholder="Enter Name" class="form-control" />
 						  </fieldset>
 						<br/>
 					</div>		
 					
 
-     <!-- <fieldset class="pure-group btn-gamp">
-        <label for="message">Message: </label>
-        <textarea id="message" name="message" rows="10"
-        placeholder="Tell us what's on your mind..."></textarea>
-      </fieldset>-->
 <div class="btn-gamp">
       <fieldset class="pure-group btn-gamp">
-        <label for="email">Email:&nbsp;</label>
+        <!--<label for="email">Email:&nbsp;</label>-->
         <input id="email" name="email" type="email" value=""
         required placeholder="Enter Email" class="form-control" id="exampleInputEmail3"/>
         <span class="email-invalid" style="display:none">
@@ -458,64 +453,17 @@ return window.open(url, title, 'toolbar=no, location=no, directories=no, status=
 	
 		}	) 
 		.init();
+    new ClipboardJS('.link', {
+        text: function (trigger) {
+            return trigger.childNodes[1].textContent;
+        }
+    });
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+
 	</script>
-<script type="text/javascript">
-		function validateForm() {
-		if (isEmpty(document.getElementById('data_2').value.trim())) {
-		alert('NAME is required!');
-		return false;
-		}
-		if (isEmpty(document.getElementById('data_4').value.trim())) {
-		alert('EMAIL is required!');
-		return false;
-		}
-		if (!validateEmail(document.getElementById('data_4').value.trim())) {
-		alert('EMAIL must be a valid email address!');
-		return false;
-		}
-		return true;
-		}
-		function isEmpty(str) { return (str.length === 0 || !str.trim()); }
-		function validateEmail(email) {
-		var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,15}(?:\.[a-z]{2})?)$/i;
-		return isEmpty(email) || re.test(email);
-		}
-</script>
-	  <script>
-		  function youTubes_makeDynamic() {
-			var $ytIframes = $('iframe[src*="youtube.com"]');
-			$ytIframes.each(function (i,e) {
-				var $ytFrame = $(e);
-				var ytKey; var tmp = $ytFrame.attr('src').split(/\//); tmp = tmp[tmp.length - 1]; tmp = tmp.split('?'); ytKey = tmp[0];
-				var $ytLoader = $('<div class="ytLoader">');
-				$ytLoader.append($('<img class="cover" src="https://i.ytimg.com/vi/'+ytKey+'/hqdefault.jpg" width="350" height="222" style="vertical-align:top; position: relative; top: 0%;transform: translateY(-12%);" > '));
-				$ytLoader.append($('<img class="playBtn" src="img/play_button.png">'));
-				$ytLoader.data('$ytFrame',$ytFrame);
-				$ytFrame.replaceWith($ytLoader);
-				$ytLoader.click(function () {
-					var $ytFrame = $ytLoader.data('$ytFrame');
-					$ytFrame.attr('src',$ytFrame.attr('src')+'?autoplay=1');
-					$ytLoader.replaceWith($ytFrame);
-				});
-			});
-		};
-		$(document).ready(function () {youTubes_makeDynamic()});
-		  
-		  $('#playButton').click(function () {
-    $('#carousel-slider').carousel('cycle');
-    $('#pauseButton').show();
-	 $('#playButton').hide();
-});
-$('#pauseButton').click(function () {
-    $('#carousel-slider').carousel('pause');
-	$('#pauseButton').hide();
-	 $('#playButton').show();
-});
-$('#carousel-slider').carousel({
-    interval:12000,
-    pause: "false"
-});		 
-	  </script>
+        <script src="js/local.js"></script>
 	<!-- Submit the Form to Google Using "AJAX" -->
  
 	<script data-cfasync="false" type="text/javascript" src="js/form-submission-handler.js"></script>
