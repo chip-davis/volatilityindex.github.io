@@ -313,10 +313,11 @@ a:hover {
 .carousel-caption  h2 span {
 	font-size:50px;
 	color: #fff;
+    
 }
 
 .carousel-caption  p {
-	font-size:30px;
+	font-size:20px;
 	margin-top:30px;
 	margin-bottom:20px;
 	color:#fff;
@@ -324,7 +325,7 @@ a:hover {
 	background:#65AAF0;
 }
 
-.carousel-inner .form-inline .form-group button[type="livedemo"]{
+/*.carousel-inner .form-inline .form-group button[type="livedemo"]{
 	padding:20px 60px;
 	font-size:20px;
 	background:#65AAF0;
@@ -361,7 +362,7 @@ a:hover {
   -moz-transition: color 1200ms, background-color 1200ms;
   -o-transition:  color 1200ms, background-color 1200ms;
   transition:  color 1200ms, background-color 1200ms;
-}
+}*/
 
 .form-inline {
 	margin-top:50px;	
