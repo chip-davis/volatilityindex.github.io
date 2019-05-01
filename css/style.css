@@ -1097,9 +1097,9 @@ ul.social-network li a {
        font-size: 22px;
     }
 
-    .sidenav{width: 0}
+    .dropdown-container, .sidenav a , .dropdown-btn, .sidenav, .sidenav a:hover, .dropdown-btn:hover, .dropdown a {width: 0}
     .main {
-        margin-left: 0px; 
+        margin-left: 0px;
 
     }
 
