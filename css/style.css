@@ -1078,7 +1078,7 @@ ul.social-network li a {
         width: 150px;
         font-size: 12px;
         padding-bottom: 0px;
-        
+
 
 
     }
@@ -1096,6 +1096,13 @@ ul.social-network li a {
     .navbar h1 {
        font-size: 22px;
     }
+
+    .sidenav{width: 0}
+    .main {
+        margin-left: 0px; 
+
+    }
+
 }
 
 
