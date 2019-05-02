@@ -91,13 +91,13 @@ a:hover {
 /*SideNav*/
 
 .sidenav {
-    top: 12%;
+    top: 10%;
     height: 100%;
-    width: 230px;
+ width:200px;
     position: fixed;
     z-index: 1;
     left: 0;
-    background-color: rgba(76, 96, 133, 0.34);
+    background-color: rgb(22, 50, 66);
 
     overflow-x: visible;
 
@@ -107,27 +107,31 @@ a:hover {
     background: #272727 ;
     top:0;
     font-size: 20px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 .sidenav-header h4{
     color:#ffffff;
-    padding: 20px; "
+    padding: 20px;
+    width: 100%;
 }
 
 .sidenav a , .dropdown-btn {
     padding: 6px 7px 6px 16px;
     font-size: 15px;
-    color: #4C6085;
+    color: #9ab1ea;
     display: block;
     border: none;
     background: none;
-    width: 230px;
+
     text-align: left;
     cursor: pointer;
     outline: none;
 }
 
 .sidenav a:hover, .dropdown-btn:hover {
-    width: 230px;
+
     left:0;
     color: #4C6085;
     background: #f1f1f1;
@@ -139,7 +143,7 @@ a:hover {
 
 
 .main {
-    margin-left: 230px; /* Same as the width of the sidenav  */
+    /* Same as the width of the sidenav  */
 
 
 }
@@ -1075,7 +1079,7 @@ ul.social-network li a {
     }
 
     .dropdown-container, .sidenav a , .dropdown-btn, .sidenav, .sidenav a:hover, .dropdown-btn:hover, .dropdown a {
-        width: 150px;
+
         font-size: 12px;
         padding-bottom: 0px;
 
@@ -1086,10 +1090,7 @@ ul.social-network li a {
     .dropdown-btn, .dropdown a {
         padding: 0px 0px 0px 5px;
     }
-    .main {
-        margin-left: 150px; /* Same as the width of the sidenav  */
 
-    }
 }
 
 @media (max-width: 526px) {
@@ -1097,11 +1098,7 @@ ul.social-network li a {
        font-size: 22px;
     }
 
-    .dropdown-container, .sidenav a , .dropdown-btn, .sidenav, .sidenav a:hover, .dropdown-btn:hover, .dropdown a {width: 0}
-    .main {
-        margin-left: 0px;
 
-    }
 
 }
 
