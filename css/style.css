@@ -228,17 +228,19 @@ a:hover {
   slider
 ===========================*/
 .slider {
-	position: relative;	
+	position: relative;
 	
 	
 }
 
 #carousel-slider {
   position: relative;
+    background-size: cover;
+    margin-left: 200px;
 	
 }
 #carouselButtons {
-    margin-left: 50px;
+    margin-left: 150px;
     position: absolute;
     top: 60%;
 }
@@ -1083,12 +1085,16 @@ ul.social-network li a {
         font-size: 12px;
         padding-bottom: 0px;
 
-
-
     }
 
     .dropdown-btn, .dropdown a {
         padding: 0px 0px 0px 5px;
+    }
+
+    #carousel-slider {
+
+        margin-left: 0px;
+
     }
 
 }
