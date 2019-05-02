@@ -4,7 +4,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130747721-1"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
-
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -86,7 +86,7 @@
     </div><!--/.container-->
 </nav><!--/nav-->
 
-<div class="sidenav col-md-2 col-sm-1 col-xs-1" style="padding: 0px">
+<div class="sidenav col-md-2 col-sm-2 col-xs-2" style="padding: 0px">
     <div class="sidenav-header" style="width: 100%;padding: 0px;">
         <h4>Tail-Index Series</h4>
     </div>
@@ -1027,6 +1027,14 @@
         function topFunction() {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
+        }
+
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
         }
     </script>
     <script src="js/local.js"></script>
