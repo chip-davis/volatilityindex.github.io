@@ -1111,15 +1111,19 @@ ul.social-network li a {
         margin-left:15%;
 
     }
+    #topCharts{
+        padding-top: 90px;
+    }
 
 }
 @media (max-width: 767px) {
-   
+
     .main {
 
         margin-left:0%;
 
     }
+    
 
 }
 @media (max-width: 526px) {
@@ -1132,6 +1136,10 @@ ul.social-network li a {
         margin-left:0%;
 
     }
+    #topCharts{
+        padding-top: 100px;
+    }
+
 
 }
 
