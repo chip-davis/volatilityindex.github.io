@@ -1113,7 +1113,15 @@ ul.social-network li a {
     }
 
 }
+@media (max-width: 767px) {
+   
+    .main {
 
+        margin-left:0%;
+
+    }
+
+}
 @media (max-width: 526px) {
     .navbar h1 {
        font-size: 22px;
