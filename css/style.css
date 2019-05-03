@@ -1124,7 +1124,7 @@ ul.social-network li a {
 
     }
     #topCharts{
-        padding-top: 120px;
+        padding-top: 130px;
     }
 
 
@@ -1135,13 +1135,11 @@ ul.social-network li a {
     }
 
     .main {
-       
+
         margin-left:0%;
 
     }
-    #topCharts{
-        padding-top: 100px;
-    }
+   
 
 
 }
