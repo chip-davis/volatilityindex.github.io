@@ -65,9 +65,15 @@ a:hover {
     position: absolute;
     width:230px;
     z-index: 99999;
+    border: 1px solid #4C6085;
 
 }
 
+#topCharts .dropdown-container {
+
+    left:0%;
+    top:20px;
+}
 .dropdown {
     position: relative;
     display: inline-block;
@@ -80,6 +86,8 @@ a:hover {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+
+
 }
 
 /* Optional: Style the caret down icon */
@@ -93,11 +101,12 @@ a:hover {
 .sidenav {
     top: 10%;
     height: 100%;
- width:200px;
+
     position: fixed;
     z-index: 1;
     left: 0;
-    background-color: rgb(22, 50, 66);
+    background: #f1f1f1;
+
 
     overflow-x: visible;
 
@@ -117,10 +126,11 @@ a:hover {
     width: 100%;
 }
 
-.sidenav a , .dropdown-btn {
+.chartnav a , .dropdown-btn {
     padding: 6px 7px 6px 16px;
     font-size: 15px;
-    color: #9ab1ea;
+    color: #4C6085;
+
     display: block;
     border: none;
     background: none;
@@ -129,12 +139,11 @@ a:hover {
     cursor: pointer;
     outline: none;
 }
-
-.sidenav a:hover, .dropdown-btn:hover {
+.chartnav a:hover, .dropdown-btn:hover {
 
     left:0;
-    color: #4C6085;
-    background: #f1f1f1;
+    color: #f1f1f1;
+    background: #4C6085;
     font-size: 17px;
     display: block;
 }
@@ -232,11 +241,15 @@ a:hover {
 	
 	
 }
+.main {
 
+    margin-left:15%;
+
+}
 #carousel-slider {
   position: relative;
     background-size: cover;
-    margin-left: 200px;
+
 	
 }
 #carouselButtons {
@@ -1080,8 +1093,10 @@ ul.social-network li a {
         display: block !important;
     }
 
-    .dropdown-container, .sidenav a , .dropdown-btn, .sidenav, .sidenav a:hover, .dropdown-btn:hover, .dropdown a {
-
+    .dropdown-container, .chartnav a , .dropdown-btn, .sidenav, .chartnav a:hover, .dropdown-btn:hover, .dropdown a {
+        text-align: justify;
+        -ms-text-justify: distribute-all-lines;
+        text-justify: distribute-all-lines;
         font-size: 12px;
         padding-bottom: 0px;
 
@@ -1091,9 +1106,9 @@ ul.social-network li a {
         padding: 0px 0px 0px 5px;
     }
 
-    #carousel-slider {
+    .main {
 
-        margin-left: 0px;
+        margin-left:15%;
 
     }
 
@@ -1104,7 +1119,11 @@ ul.social-network li a {
        font-size: 22px;
     }
 
+    .main {
 
+        margin-left:0%;
+
+    }
 
 }
 
