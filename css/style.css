@@ -1123,7 +1123,10 @@ ul.social-network li a {
         margin-left:0%;
 
     }
-    
+    #topCharts{
+        padding-top: 100px;
+    }
+
 
 }
 @media (max-width: 526px) {
@@ -1132,7 +1135,7 @@ ul.social-network li a {
     }
 
     .main {
-
+        width: 90%;
         margin-left:0%;
 
     }
