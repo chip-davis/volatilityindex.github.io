@@ -1116,7 +1116,7 @@ ul.social-network li a {
     }
 
 }
-@media (max-width: 767px) {
+@media (max-width: 812px) {
 
     .main {
 
@@ -1124,7 +1124,7 @@ ul.social-network li a {
 
     }
     #topCharts{
-        padding-top: 100px;
+        padding-top: 120px;
     }
 
 
