@@ -81,24 +81,24 @@
                 <div class="col-md-10 col-md-offset-1 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
                     <p style="color:#000000;">Utilizing out-of-the-money short-dated options, our tail indices measure risk-neutral jump tail probabilities in assets. The two key estimators employed in the option-based tail indices are the <b>tail shape parameter</b> \(\alpha^-\) and <b>level shift parameter</b> \(\phi^-\). They are estimated by:<br><br>
 
-                     \[\hat{\alpha_t}^- = \underset{2\leq i\leq N}{\mathrm{median}}\left|1-\frac{\ln{\frac{O_{t,\tau}(k_{t,i})}{O_{t,\tau}(k_{t,i-1})}}}{k_{t,i}-k_{t,i-1}}\right|\]<br>
+                        <br>\[\hat{\alpha_t}^- = \underset{2\leq i\leq N}{\mathrm{median}}\left|1-\frac{\ln{\frac{O_{t,\tau}(k_{t,i})}{O_{t,\tau}(k_{t,i-1})}}}{k_{t,i}-k_{t,i-1}}\right|\]<br>
 
-                     \[\hat{\phi_t}^- = \underset{1\leq i\leq N}{\mathrm{median}}\left|\ln{\frac{e^{r_{t,\tau}}O_{t,\tau}(k_{t,i})}{\tau F_{t,\tau}}}-(1+\hat{\alpha_t}^-)k_{t,i}+\ln(\hat{\alpha_t}^-+1)+\ln(\hat{\alpha_t}^-)\right|\]
+                        \[\hat{\phi_t}^- = \underset{1\leq i\leq N}{\mathrm{median}}\left|\ln{\frac{e^{r_{t,\tau}}O_{t,\tau}(k_{t,i})}{\tau F_{t,\tau}}}-(1+\hat{\alpha_t}^-)k_{t,i}+\ln(\hat{\alpha_t}^-+1)+\ln(\hat{\alpha_t}^-)\right|\]
 
-                     where
+                        <br>where
 
-                     \[N = \text{number of valid option quotes}\]
-                     \[O_{t,\tau}(k_{t,i}) = \text{mid-price of i-th option}\]
-                     \[k_{t,i} = \text{unadjusted log-moneyness of i-th option}\]
-                     \[r_{t,\tau} = \text{riskless interest rate with maturity }\tau\]<br>
+                        \[N = \text{number of valid option quotes}\]
+                        \[O_{t,\tau}(k_{t,i}) = \text{mid-price of i-th option}\]
+                        \[k_{t,i} = \text{unadjusted log-moneyness of i-th option}\]
+                        \[r_{t,\tau} = \text{riskless interest rate with maturity }\tau\]<br>
 
-                     With \(\hat{\alpha_t}^-\) and \(\hat{\phi_t}^-\), the tail measures Left Jump Variation and Left Jump Probability are given by<br><br>
+                        With \(\hat{\alpha_t}^-\) and \(\hat{\phi_t}^-\), the tail measures Left Jump Volatility and Left Jump Probability are given by<br><br><br>
 
-                     \[\text{LJV} = \hat{\phi_t}^-\cdot e^{-\hat{\alpha_t}^-|\theta_t|}\cdot\frac{\hat{\alpha_t}^-|\theta_t|(\hat{\alpha_t}^-k_t+2)+2}{(\hat{\alpha_t}^-)^3}\]<br>
+                        \[\text{LJV} = 100 \times \sqrt{\hat{\phi_t}^-\cdot e^{-\hat{\alpha_t}^-|\theta_t|}\cdot\frac{\hat{\alpha_t}^-|\theta_t|(\hat{\alpha_t}^-k_t+2)+2}{(\hat{\alpha_t}^-)^3}}\]<br>
 
-                     \[\text{Left Jump Probability} = \hat{\phi_t}^- \cdot\frac{e^{-\hat{\alpha_t}^-|\theta_t|}}{\hat{\alpha_t}^-}\]<br>
+                        \[\text{Left Jump Probability} =100 \times  \hat{\phi_t}^- \cdot\frac{e^{-\hat{\alpha_t}^-|\theta_t|}}{\hat{\alpha_t}^-}\]<br>
 
-                     Here, \(\theta_t\) is a threshold of negative tail jump. For LJV, we set it as a 10 times standard deviation move over 1 week horizon. For left jump probability, we fix it to measure the probability of a plunge more than or equal to a constant 10% barrier over 1 week time.
+                        Here, \(\theta_t\) is a threshold of negative tail jump. For LJV, we set it as a 10 times standard deviation move over 1 week horizon. For left jump probability, we fix it to measure the probability of a plunge more than or equal to a constant 10% barrier over 1 week time.
                         <br><br>
                     </p>
 

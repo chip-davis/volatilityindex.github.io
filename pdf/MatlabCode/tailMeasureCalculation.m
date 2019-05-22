@@ -2,7 +2,6 @@ clear
 
 %====Load Data====
 load('SPX Clean 1996-2017 BT Full Maturity');
-load('SPX ATM Vol30d')
 
 %====Initialize Variables====
 dates = unique(alignedData(:,1));
@@ -222,7 +221,7 @@ for i = 1:length(dates)
     end
 end
 
-%Estimate phi^pm, LJV and other tail risk measures
+%Estimate phi^pm, LJVariation and other tail risk measures
 
 for i = 1:length(dates)
        
@@ -251,9 +250,9 @@ for i = 1:length(dates)
     end
         
     LJI = NaN;
-    LJV = NaN;
+    LJVariation = NaN;
     RJI = NaN;
-    RJV = NaN;
+    RJVariation = NaN;
     
     tP = NaN;
     tC = NaN;
@@ -268,31 +267,31 @@ for i = 1:length(dates)
     
     if(~isnan(phi_t_minus))
         LJI = phi_t_minus * exp(-k_t_P* alpha_t_minus)/alpha_t_minus;
-        LJV = phi_t_minus * exp(-alpha_t_minus*k_t_P)*(alpha_t_minus*k_t_P*(alpha_t_minus*k_t_P+2)+2)/(alpha_t_minus^3);    
+        LJVariation = phi_t_minus * exp(-alpha_t_minus*k_t_P)*(alpha_t_minus*k_t_P*(alpha_t_minus*k_t_P+2)+2)/(alpha_t_minus^3);    
     end
     if(~isnan(phi_t_plus))
         RJI = phi_t_plus * exp(-k_t_C * alpha_t_plus)/alpha_t_plus;
-        RJV = phi_t_plus * exp(-alpha_t_plus*k_t_C)*(alpha_t_plus*k_t_C*(alpha_t_plus*k_t_C+2)+2)/(alpha_t_plus^3);
+        RJVariation = phi_t_plus * exp(-alpha_t_plus*k_t_C)*(alpha_t_plus*k_t_C*(alpha_t_plus*k_t_C+2)+2)/(alpha_t_plus^3);
     end
                
         
-    result(i,6:11)= [phi_t_minus phi_t_plus LJI RJI LJV RJV]';
+    result(i,6:11)= [phi_t_minus phi_t_plus LJI RJI LJVariation RJVariation]';
 end
 
 calendar = datetime(result(:,1),'convertfrom','datenum');
 
-leftDensity = (5/252).*result(:,6).*exp(-5.*result(:,4).*vol30dATM.impl_volatility.*sqrt(5/252))./result(:,4);
-leftDensityFixed = (5/252).*result(:,6).*exp(-0.1.*result(:,4))./result(:,4);
+leftDensity = 100.* (5/252).*result(:,6).*exp(-5.*result(:,4).*vol30dATM.impl_volatility.*sqrt(5/252))./result(:,4);
+leftDensityFixed = 100.* (5/252).*result(:,6).*exp(-0.1.*result(:,4))./result(:,4);
 
 maLength = 21;
 leftDensityMA = zeros(length(calendar),1);
 leftDensityFixedMA = zeros(length(calendar),1); 
-LJVMA = zeros(length(calendar),1); 
+LJVariationMA = zeros(length(calendar),1); 
 
 for j = maLength:length(calendar)
    leftDensityMA(j) = nanmean(leftDensity((j-maLength+1):j));
 
-   LJVMA(j) = nanmean(result((j-maLength+1):j,10));
+   LJVariationMA(j) = nanmean(result((j-maLength+1):j,10));
 
 
    if(sum(isnan(leftDensityFixed((j-maLength+1):j)))<=maLength/2)
@@ -303,5 +302,8 @@ for j = maLength:length(calendar)
 
 end
 
+LJVolatility = 100 .* sqrt(result(:,10));
+LJVolatilityMA = 100 .* sqrt(LJVariationMA);
 
-save('SPX Tail Risk Measures','calendar','result','LJVMA','leftDensityFixedMA');
+
+save('SPX Tail Risk Measures','calendar','result','LJVolatility','LJVolatilityMA','leftDensityFixedMA');
