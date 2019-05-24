@@ -642,7 +642,7 @@
 
                                 <script>
 
-                                    $.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vQT_p3-2huko-d-dVRM0zOfxFfk1IYPKR7-3UnLOBAb62bmZmqQscCZrTBhb7hUhPxcKEKi-Tcl83tB/pub?gid=0&single=true&output=csv', function(data) {
+                                    $.get('/pdf/LJV_SPX.csv', function(data) {
                                         // Parse the data into JSON
                                         var jsonData = [];
                                         var lines = data.split("\n");
