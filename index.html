@@ -5,6 +5,12 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130747721-1"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="https://code.highcharts.com/css/stocktools/gui.css">
+    <link rel="stylesheet" type="text/css" href="https://code.highcharts.com/css/annotations/popup.css">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -287,7 +293,7 @@
         <div class="sidenav col-md-2 col-sm-2 col-xs-1" style="padding: 0px;display : inline-table;">
             <!-- this element will be visible for all device widths except xs -->
             <div class="chartnav" style="display : inline-table;">
-                <div class="sidenav-header" style="width: 100%;padding: 0px;">
+                <div class="sidenav-header col-md-2 col-sm-2 col-xs-1" style="width: 100%;padding: 0px;">
                     <br>
                     <h4>Tail-Index Series</h4>
                 </div>
@@ -304,7 +310,7 @@
                         <a href="#" data-target="#carousel-slider" data-slide-to="2" onclick="topFunction()">Prob, 10%
                             Weekly Down Move</a>
                     </div>
-                </div>
+                </div><br>
                 <div class="dropdown">
                     <button class="dropdown-btn">Dow Jones Industrial Average
                         <i class="fa fa-caret-right"></i>
@@ -319,7 +325,7 @@
                             Weekly Down Move</a>
 
                     </div>
-                </div>
+                </div><br>
                 <div class="dropdown">
                     <button class="dropdown-btn">NASDAQ 100 Index
                         <i class="fa fa-caret-right"></i>
@@ -333,7 +339,7 @@
                         <a href="#" data-target="#carousel-slider" data-slide-to="8" onclick="topFunction()">Prob, 10%
                             Weekly Down Move</a>
                     </div>
-                </div>
+                </div><br>
                 <div class="dropdown">
                     <button class="dropdown-btn">Russell 2000 Index
                         <i class="fa fa-caret-right"></i>
@@ -347,7 +353,7 @@
                         <a href="#" data-target="#carousel-slider" data-slide-to="11" onclick="topFunction()">Prob, 10%
                             Weekly Down Move</a>
                     </div>
-                </div>
+                </div><br>
                 <div class="dropdown">
                     <button class="dropdown-btn">iShares MSCI Emerging Markets ETF
                         <i class="fa fa-caret-right"></i>
@@ -361,7 +367,7 @@
                         <a href="#" data-target="#carousel-slider" data-slide-to="14" onclick="topFunction()">Prob, 10%
                             Weekly Down Move</a>
                     </div>
-                </div>
+                </div><br>
                 <div class="dropdown">
                     <button class="dropdown-btn">iShares MSCI EAFE ETF
                         <i class="fa fa-caret-right"></i>
@@ -375,7 +381,7 @@
                         <a href="#" data-target="#carousel-slider" data-slide-to="17" onclick="topFunction()">Prob, 10%
                             Weekly Down Move</a>
                     </div>
-                </div>
+                </div><br>
                 <div class="dropdown">
                     <button class="dropdown-btn">iShares China Large-Cap ETF
                         <i class="fa fa-caret-right"></i>
@@ -389,7 +395,7 @@
                         <a href="#" data-target="#carousel-slider" data-slide-to="20" onclick="topFunction()">Prob, 10%
                             Weekly Down Move</a>
                     </div>
-                </div>
+                </div><br>
                 <div class="dropdown">
                     <button class="dropdown-btn">iShares MSCI Brazil ETF
                         <i class="fa fa-caret-right"></i>
@@ -403,7 +409,7 @@
                         <a href="#" data-target="#carousel-slider" data-slide-to="23" onclick="topFunction()">Prob, 10%
                             Weekly Down Move</a>
                     </div>
-                </div>
+                </div><br>
                 <div class="dropdown">
                     <button class="dropdown-btn">iShares MSCI Mexico ETF
                         <i class="fa fa-caret-right"></i>
@@ -417,7 +423,7 @@
                         <a href="#" data-target="#carousel-slider" data-slide-to="26" onclick="topFunction()">Prob, 10%
                             Weekly Down Move</a>
                     </div>
-                </div>
+                </div><br>
                 <div class="dropdown">
                     <button class="dropdown-btn">SPDR Gold Shares
                         <i class="fa fa-caret-right"></i>
@@ -430,7 +436,7 @@
                             Tail Variation</a>
                         <a href="#" data-target="#carousel-slider" data-slide-to="29" onclick="topFunction()">Prob, 10%
                             Weekly Down Move</a>
-                    </div>
+                    </div><br>
                 </div>
             </div>
         </div>
@@ -626,9 +632,54 @@
                                         <p>Click on the menu next to chart to print and download</p>
                                     </div>
                                 </div>
-                                <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                              <!--  <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
                                         src="https://cloud.highcharts.com/embed/bMjCJckmD/"
-                                        style="border: 0;  height: 500px"></iframe>
+                                        style="border: 0;  height: 500px"></iframe>-->
+
+                                <div id="SP" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                                </div>
+
+                                <script>
+
+                                    $.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vQT_p3-2huko-d-dVRM0zOfxFfk1IYPKR7-3UnLOBAb62bmZmqQscCZrTBhb7hUhPxcKEKi-Tcl83tB/pub?gid=0&single=true&output=csv', function(data) {
+                                        // Parse the data into JSON
+                                        var jsonData = [];
+                                        var lines = data.split("\n");
+                                        lines.splice(0, 1);
+                                        for (idx in lines) {
+                                            if (lines[idx] != '') {
+                                                var tuple = lines[idx].split(",");
+                                                jsonData.push([+new Date(tuple[0], tuple[1] - 1), parseFloat(tuple[2])]);
+                                            }
+                                        }
+
+                                        // Create the chart
+                                        window.chart = new Highcharts.StockChart({
+                                            chart : {
+                                                renderTo : 'SP'
+                                            },
+                                            rangeSelector : {
+                                                selected : 5
+                                            },
+                                            title : {
+                                                text : 'Left Tail Volatility %, S&P 500 Index'
+                                            },
+                                            series : [{
+                                                name : 'Left Tail Volatility %',
+                                                data : jsonData,
+                                                tooltip: {
+                                                    valueDecimals: 2
+                                                },
+                                                id: 'volatilitySP'
+                                            }],
+                                            exporting: {
+                                                enabled: true
+                                            }
+                                        });
+                                    });
+
+                                </script>
                             </div>
                             <!--<div class="wow fadeInUp visible-xs" data-wow-offset="0" data-wow-delay="0.3s">
                                 <h4>Volatility </h4>
