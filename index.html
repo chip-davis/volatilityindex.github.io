@@ -642,40 +642,114 @@
 
                                 <script>
 
-                                    $.get('pdf/LJV_SPX.xls', function(data) {
-                                        // Parse the data into JSON
-                                        var jsonData = [];
-                                        var lines = data.split("\n");
-                                        lines.splice(0, 1);
-                                        for (idx in lines) {
-                                            if (lines[idx] != '') {
-                                                var tuple = lines[idx].split(",");
-                                                jsonData.push([+new Date(tuple[0], tuple[1] - 1), parseFloat(tuple[2])]);
-                                            }
-                                        }
-
+                                    
                                         // Create the chart
                                         window.chart = new Highcharts.StockChart({
-                                            chart : {
-                                                renderTo : 'SP'
+
+                                            chart: {
+                                                 renderTo : 'SP',
+                                            polar: false
+                                        },
+                                            rangeSelector: {
+                                            enabled: false
+                                        },
+                                            title: {
+                                            text: "Left Tail Volatility %, S&P 500 Index"
+                                        },
+                                            subtitle: {
+                                            text: "© Prof. Torben G. Andersen & Prof. Viktor Todorov"
+                                        },
+                                            xAxis: {
+                                            minPadding: 0,
+                                                maxPadding: 0,
+                                                overscroll: 0,
+                                                ordinal: true,
+                                                title: {
+                                                text: "Date"
                                             },
-                                            rangeSelector : {
-                                                selected : 5
+                                            labels: {
+                                                overflow: 'justify',
+                                                    format: {value:%Y-%m}
                                             },
-                                            title : {
-                                                text : 'Left Tail Volatility %, S&P 500 Index'
-                                            },
-                                            series : [{
-                                                name : 'Left Tail Volatility %',
-                                                data : jsonData,
-                                                tooltip: {
-                                                    valueDecimals: 2
-                                                },
-                                                id: 'volatilitySP'
-                                            }],
-                                            exporting: {
-                                                enabled: true
+                                            showLastLabel: true,
+                                                index: 0,
+                                                isX: true,
+                                                type: datetime,
+                                                categories: null,
+                                                startOnTick: false,
+                                                endOnTick: false,
+                                                dateTimeLabelFormats: {
+                                                day: "%e :%b"
                                             }
+                                        },
+                                            yAxis: {
+                                            labels: {
+                                                y: -2
+                                            },
+                                            opposite: true,
+                                                showLastLabel: false,
+                                                title: {
+                                                text: null
+                                            },
+                                            index: 0
+                                        },
+                                            series: [
+                                            {
+                                                lineWidth: 1,
+                                                type: line,
+                                                tooltip: {
+                                                    xDateFormat: "%Y-%m-%d %H:%M:%S"
+                                                }
+                                            }
+                                        ],
+                                            pane: {
+                                            background: []
+                                        },
+                                            responsive: {
+                                            rules: []
+                                        },
+                                            tooltip: {
+                                            pointFormat: "<span style=\"color:{point.color}\">●</span> LJV_SPX: <b>{point.y}</b><br/>"
+                                        },
+                                            plotOptions: {
+                                            series: {
+                                                states: {
+                                                    hover: {
+                                                        marker: {
+                                                            states: {
+                                                                hover: {
+                                                                    radiusPlus: 2
+                                                                }
+                                                            }
+                                                        },
+                                                        lineWidthPlus: 0
+                                                    },
+                                                    inactive: {}
+                                                }
+                                            },
+                                            line: {
+                                                tooltip: {
+                                                    xDateFormat: "%Y-%m-%d %H:%M:%S"
+                                                },
+                                                animation: {
+                                                    duration: 3000
+                                                }
+                                            }
+                                        },
+                                            accessibility: {
+                                            pointDateFormat: "%Y-%m-%d %H:%M:%S"
+                                        },
+                                            data: {
+                                            csvURL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT_p3-2huko-d-dVRM0zOfxFfk1IYPKR7-3UnLOBAb62bmZmqQscCZrTBhb7hUhPxcKEKi-Tcl83tB/pub?gid=0&single=true&output=csv",
+                                                enablePolling: true,
+                                                dataRefreshRate: 86400
+                                        },
+                                            chartarea: {},
+                                            plotarea: {},
+                                            credits: {},
+                                            googleSpreadsheetKey: false,
+                                            googleSpreadsheetWorksheet: false
+                                        }
                                         });
                                     });
 
