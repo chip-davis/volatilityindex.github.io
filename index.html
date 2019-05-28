@@ -644,127 +644,130 @@
 
                                 <script>
 
-                                    $.get('pdf/data.csv', function(data) {
-                                        // Parse the data into JSON
-                                        var jsonData = [];
-                                        var lines = data.split("\n");
-                                        lines.splice(0, 1);
-                                        for (idx in lines) {
-                                            if (lines[idx] != '') {
-                                                var tuple = lines[idx].split(",");
-                                                jsonData.push([+new Date(tuple[0], tuple[1] - 1), parseFloat(tuple[6])]);
+                                    $(function() {
+                                        $.get('pdf/data.csv', function (data) {
+                                            // Parse the data into JSON
+                                            var jsonData = [];
+                                            var lines = data.split("\n");
+                                            lines.splice(0, 1);
+                                            for (idx in lines) {
+                                                if (lines[idx] != '') {
+                                                    var tuple = lines[idx].split(",");
+                                                    jsonData.push([+new Date(tuple[0], tuple[1] - 1), parseFloat(tuple[6])]);
+                                                }
                                             }
-                                        }
 
 
-                                        window.chart = new  Highcharts.StockChart('SP', {
+                                            window.chart = new Highcharts.StockChart('SP', {
 
-                                            chart: {
+                                                chart: {
 
-                                                polar: false
-                                            },
-                                            rangeSelector: {
-                                                enabled: false
-                                            },
-                                            title: {
-                                                text: "Left Tail Volatility %, S&P 500 Index"
-                                            },
-                                            subtitle: {
-                                                text: "© Prof. Torben G. Andersen & Prof. Viktor Todorov"
-                                            },
-                                            xAxis: {
-                                                minPadding: 0,
-                                                maxPadding: 0,
-                                                overscroll: 0,
-                                                ordinal: true,
+                                                    polar: false
+                                                },
+                                                rangeSelector: {
+                                                    enabled: false
+                                                },
                                                 title: {
-                                                    text: "Date"
+                                                    text: "Left Tail Volatility %, S&P 500 Index"
                                                 },
-                                                labels: {
-                                                    overflow: 'justify',
-                                                    format: "{value:%Y-%m}"
+                                                subtitle: {
+                                                    text: "© Prof. Torben G. Andersen & Prof. Viktor Todorov"
                                                 },
-                                                showLastLabel: true,
-                                                index: 0,
-                                                isX: true,
-                                                type: 'datetime',
-                                                categories: null,
-                                                startOnTick: false,
-                                                endOnTick: false,
-                                                dateTimeLabelFormats: {
-                                                    day: "%e :%b"
-                                                }
-                                            },
-                                            yAxis: {
-                                                labels: {
-                                                    y: -2
-                                                },
-                                                opposite: true,
-                                                showLastLabel: false,
-                                                title: {
-                                                    text: null
-                                                },
-                                                index: 0
-                                            },
-                                            series: [
-                                                {
-                                                    lineWidth: 1,
-                                                    type: 'line',
-                                                    tooltip: {
-                                                        xDateFormat: "%m-%d-%Y"
+                                                xAxis: {
+                                                    minPadding: 0,
+                                                    maxPadding: 0,
+                                                    overscroll: 0,
+                                                    ordinal: true,
+                                                    title: {
+                                                        text: "Date"
                                                     },
-                                                    data : jsonData
-                                                }
-                                            ],
-                                            pane: {
-                                                background: []
-                                            },
-                                            responsive: {
-                                                rules: []
-                                            },
-                                            tooltip: {
-                                                pointFormat: "<span style=\"color:{point.color}\">●</span> LJV_SPX: <b>{point.y}</b><br/>"
-                                            },
-                                            plotOptions: {
-                                                series: {
-                                                    states: {
-                                                        hover: {
-                                                            marker: {
-                                                                states: {
-                                                                    hover: {
-                                                                        radiusPlus: 2
-                                                                    }
-                                                                }
-                                                            },
-                                                            lineWidthPlus: 0
+                                                    labels: {
+                                                        overflow: 'justify',
+                                                        format: "{value:%Y-%m}"
+                                                    },
+                                                    showLastLabel: true,
+                                                    index: 0,
+                                                    isX: true,
+                                                    type: 'datetime',
+                                                    categories: null,
+                                                    startOnTick: false,
+                                                    endOnTick: false,
+                                                    dateTimeLabelFormats: {
+                                                        day: "%e :%b"
+                                                    }
+                                                },
+                                                yAxis: {
+                                                    labels: {
+                                                        y: -2
+                                                    },
+                                                    opposite: true,
+                                                    showLastLabel: false,
+                                                    title: {
+                                                        text: null
+                                                    },
+                                                    index: 0
+                                                },
+                                                series: [
+                                                    {
+                                                        lineWidth: 1,
+                                                        type: 'line',
+                                                        tooltip: {
+                                                            xDateFormat: "%m-%d-%Y"
                                                         },
-                                                        inactive: {}
+                                                        data: jsonData
+                                                    }
+                                                ],
+                                                pane: {
+                                                    background: []
+                                                },
+                                                responsive: {
+                                                    rules: []
+                                                },
+                                                tooltip: {
+                                                    pointFormat: "<span style=\"color:{point.color}\">●</span> LJV_SPX: <b>{point.y}</b><br/>"
+                                                },
+                                                plotOptions: {
+                                                    series: {
+                                                        states: {
+                                                            hover: {
+                                                                marker: {
+                                                                    states: {
+                                                                        hover: {
+                                                                            radiusPlus: 2
+                                                                        }
+                                                                    }
+                                                                },
+                                                                lineWidthPlus: 0
+                                                            },
+                                                            inactive: {}
+                                                        }
+                                                    },
+                                                    line: {
+                                                        tooltip: {
+                                                            xDateFormat: "%m-%d-%Y"
+                                                        },
+                                                        animation: {
+                                                            duration: 3000
+                                                        }
                                                     }
                                                 },
-                                                line: {
-                                                    tooltip: {
-                                                        xDateFormat: "%m-%d-%Y"
-                                                    },
-                                                    animation: {
-                                                        duration: 3000
-                                                    }
-                                                }
-                                            },
-                                            accessibility: {
-                                                pointDateFormat: "%m-%d-%Y"
-                                            },
-                                            data: {
-                                               // csvURL: window.location.origin + "/pdf/data.csv",
-                                                enablePolling: true,
-                                                dataRefreshRate: 86400
-                                            },
-                                            chartarea: {},
-                                            plotarea: {},
-                                            credits: {},
-                                            googleSpreadsheetKey: false,
-                                            googleSpreadsheetWorksheet: false
+                                                accessibility: {
+                                                    pointDateFormat: "%m-%d-%Y"
+                                                },
+                                                data: {
+                                                    // csvURL: window.location.origin + "/pdf/data.csv",
+                                                    enablePolling: true,
+                                                    dataRefreshRate: 86400
+                                                },
+                                                chartarea: {},
+                                                plotarea: {},
+                                                credits: {},
+                                                googleSpreadsheetKey: false,
+                                                googleSpreadsheetWorksheet: false
+                                            });
                                         });
 
+                                    });
 
                                 </script>
                             </div>
