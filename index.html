@@ -12,7 +12,7 @@
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
-
+    <script src="https://code.highcharts.com/modules/data.js"></script>
 
     window.dataLayer = window.dataLayer || [];
 
@@ -644,35 +644,36 @@
 
                                 <script>
 
+                                    $.get('pdf/data.csv', function(data) {
 
-                                       Highcharts.StockChart('SP', {
+                                        Highcharts.StockChart('SP', {
 
                                             chart: {
 
-                                            polar: false
-                                        },
+                                                polar: false
+                                            },
                                             rangeSelector: {
-                                            enabled: false
-                                        },
+                                                enabled: false
+                                            },
                                             title: {
-                                            text: "Left Tail Volatility %, S&P 500 Index"
-                                        },
+                                                text: "Left Tail Volatility %, S&P 500 Index"
+                                            },
                                             subtitle: {
-                                            text: "© Prof. Torben G. Andersen & Prof. Viktor Todorov"
-                                        },
+                                                text: "© Prof. Torben G. Andersen & Prof. Viktor Todorov"
+                                            },
                                             xAxis: {
-                                            minPadding: 0,
+                                                minPadding: 0,
                                                 maxPadding: 0,
                                                 overscroll: 0,
                                                 ordinal: true,
                                                 title: {
-                                                text: "Date"
-                                            },
-                                            labels: {
-                                                overflow: 'justify',
+                                                    text: "Date"
+                                                },
+                                                labels: {
+                                                    overflow: 'justify',
                                                     format: "{value:%Y-%m}"
-                                            },
-                                            showLastLabel: true,
+                                                },
+                                                showLastLabel: true,
                                                 index: 0,
                                                 isX: true,
                                                 type: 'datetime',
@@ -680,78 +681,78 @@
                                                 startOnTick: false,
                                                 endOnTick: false,
                                                 dateTimeLabelFormats: {
-                                                day: "%e :%b"
-                                            }
-                                        },
-                                            yAxis: {
-                                            labels: {
-                                                y: -2
+                                                    day: "%e :%b"
+                                                }
                                             },
-                                            opposite: true,
+                                            yAxis: {
+                                                labels: {
+                                                    y: -2
+                                                },
+                                                opposite: true,
                                                 showLastLabel: false,
                                                 title: {
-                                                text: null
-                                            },
-                                            index: 0
-                                        },
-                                            series: [
-                                            {
-                                                lineWidth: 1,
-                                                type: 'line',
-                                                tooltip: {
-                                                    xDateFormat: "%Y-%m-%d %H:%M:%S"
-                                                }
-                                            }
-                                        ],
-                                            pane: {
-                                            background: []
-                                        },
-                                            responsive: {
-                                            rules: []
-                                        },
-                                            tooltip: {
-                                            pointFormat: "<span style=\"color:{point.color}\">●</span> LJV_SPX: <b>{point.y}</b><br/>"
-                                        },
-                                            plotOptions: {
-                                            series: {
-                                                states: {
-                                                    hover: {
-                                                        marker: {
-                                                            states: {
-                                                                hover: {
-                                                                    radiusPlus: 2
-                                                                }
-                                                            }
-                                                        },
-                                                        lineWidthPlus: 0
-                                                    },
-                                                    inactive: {}
-                                                }
-                                            },
-                                            line: {
-                                                tooltip: {
-                                                    xDateFormat: "%Y-%m-%d %H:%M:%S"
+                                                    text: null
                                                 },
-                                                animation: {
-                                                    duration: 3000
+                                                index: 0
+                                            },
+                                            series: [
+                                                {
+                                                    lineWidth: 1,
+                                                    type: 'line',
+                                                    tooltip: {
+                                                        xDateFormat: "%Y-%m-%d %H:%M:%S"
+                                                    }
                                                 }
-                                            }
-                                        },
+                                            ],
+                                            pane: {
+                                                background: []
+                                            },
+                                            responsive: {
+                                                rules: []
+                                            },
+                                            tooltip: {
+                                                pointFormat: "<span style=\"color:{point.color}\">●</span> LJV_SPX: <b>{point.y}</b><br/>"
+                                            },
+                                            plotOptions: {
+                                                series: {
+                                                    states: {
+                                                        hover: {
+                                                            marker: {
+                                                                states: {
+                                                                    hover: {
+                                                                        radiusPlus: 2
+                                                                    }
+                                                                }
+                                                            },
+                                                            lineWidthPlus: 0
+                                                        },
+                                                        inactive: {}
+                                                    }
+                                                },
+                                                line: {
+                                                    tooltip: {
+                                                        xDateFormat: "%Y-%m-%d %H:%M:%S"
+                                                    },
+                                                    animation: {
+                                                        duration: 3000
+                                                    }
+                                                }
+                                            },
                                             accessibility: {
-                                            pointDateFormat: "%Y-%m-%d %H:%M:%S"
-                                        },
+                                                pointDateFormat: "%Y-%m-%d %H:%M:%S"
+                                            },
                                             data: {
-                                            csvURL: "pdf/data.csv",
+                                                csvURL: "pdf/data.csv",
                                                 enablePolling: true,
                                                 dataRefreshRate: 86400
-                                        },
+                                            },
                                             chartarea: {},
                                             plotarea: {},
                                             credits: {},
                                             googleSpreadsheetKey: false,
                                             googleSpreadsheetWorksheet: false
                                         });
-
+                                    });
 
                                 </script>
                             </div>
