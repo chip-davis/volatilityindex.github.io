@@ -653,7 +653,7 @@
                                             for (idx in lines) {
                                                 if (lines[idx] != '') {
                                                     var tuple = lines[idx].split(",");
-                                                    jsonData.push([+new Date(tuple[0], tuple[1] - 1), parseFloat(tuple[6])]);
+                                                    jsonData.push([+new Date(tuple[0]), parseFloat(tuple[1])]);
                                                 }
                                             }
 
