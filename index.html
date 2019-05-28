@@ -645,8 +645,19 @@
                                 <script>
 
                                     $.get('pdf/data.csv', function(data) {
+                                        // Parse the data into JSON
+                                        var jsonData = [];
+                                        var lines = data.split("\n");
+                                        lines.splice(0, 1);
+                                        for (idx in lines) {
+                                            if (lines[idx] != '') {
+                                                var tuple = lines[idx].split(",");
+                                                jsonData.push([+new Date(tuple[0], tuple[1] - 1), parseFloat(tuple[6])]);
+                                            }
+                                        }
 
-                                        Highcharts.StockChart('SP', {
+
+                                        window.chart = new  Highcharts.StockChart('SP', {
 
                                             chart: {
 
@@ -701,7 +712,8 @@
                                                     type: 'line',
                                                     tooltip: {
                                                         xDateFormat: "%m-%d-%Y"
-                                                    }
+                                                    },
+                                                    data : jsonData
                                                 }
                                             ],
                                             pane: {
@@ -742,7 +754,7 @@
                                                 pointDateFormat: "%m-%d-%Y"
                                             },
                                             data: {
-                                                csvURL: window.location.origin + "/pdf/data.csv",
+                                               // csvURL: window.location.origin + "/pdf/data.csv",
                                                 enablePolling: true,
                                                 dataRefreshRate: 86400
                                             },
@@ -752,7 +764,7 @@
                                             googleSpreadsheetKey: false,
                                             googleSpreadsheetWorksheet: false
                                         });
-                                    });
+
 
                                 </script>
                             </div>
