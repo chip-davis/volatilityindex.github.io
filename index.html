@@ -13,7 +13,7 @@
     <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/data.js"></script>
-
+    <script>
     window.dataLayer = window.dataLayer || [];
 
         function gtag() {
@@ -650,10 +650,10 @@
                                             var jsonData = [];
                                             var lines = data.split("\n");
                                             lines.splice(0, 1);
-                                            for (idx in lines) {
-                                                if (lines[idx] != '') {
-                                                    var tuple = lines[idx].split(",");
-                                                    jsonData.push([+new Date(tuple[0]), parseFloat(tuple[1])]);
+                                            for (numLine in lines) {
+                                                if (lines[numLine] != '') {
+                                                    var line = lines[numLine].split(",");
+                                                    jsonData.push([+new Date(line[0]), parseFloat(line[1])]);
                                                 }
                                             }
 
