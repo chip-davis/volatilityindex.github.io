@@ -18,7 +18,7 @@ function youTubes_makeDynamic() {
 $(document).ready(function () {
 
     youTubes_makeDynamic()
-    
+
 
 });
 
