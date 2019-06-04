@@ -493,13 +493,11 @@
                                     </div>
                                 </div>
 
-                              <!--  <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/bMjCJckmD/"
-                                        style="border: 0;  height: 500px"></iframe>-->
+                               <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                                       src="https://cloud.highcharts.com/embed/bMjCJckmD/"
+                                        style="border: 0;  height: 500px"></iframe>
 
-                                <div id="SP" class="SPfirstchart col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                                </div>
 
 
                             </div>
@@ -511,165 +509,13 @@
 
                                 <h2 style=" color:white;">S&P 500 Index</h2>
                                 <br>
-                                <div id="SPsmall" class="SPfirstchart col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                                        src="https://cloud.highcharts.com/embed/bMjCJckmD/"
+                                        style="border: 0;  height: 500px"></iframe>
 
-                                </div>
 
                             </div>
-                            <script src="https://code.highcharts.com/stock/highstock.js"></script>
-                            <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
-                            <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
-                            <script src="https://code.highcharts.com/modules/data.js"></script>
 
-                            <script>
-
-                                $(function() {
-                                    $.get('pdf/data.csv', function (data) {
-                                        // Parse the data into JSON
-                                        var jsonData = [];
-                                        var lines = data.split("\n");
-                                        lines.splice(0, 1);
-                                        for (numLine in lines) {
-                                            if (lines[numLine] != '') {
-                                                var line = lines[numLine].split(",");
-                                                jsonData.push([+new Date(line[0]), parseFloat(line[1])]);
-                                            }
-                                        }
-
-
-                                        var $containers = $('.SPfirstchart'),
-                                            chartConfig = {
-
-                                                chart: {
-
-                                                    polar: false
-                                                },
-                                                rangeSelector: {
-                                                    enabled: false
-                                                },
-                                                title: {
-                                                    text: "Left Tail Volatility %, S&P 500 Index",
-                                                    style: {
-                                                        textOutline: false,
-                                                        textShadow: false
-
-                                                    }
-                                                },
-                                                subtitle: {
-                                                    text: "© Prof. Torben G. Andersen & Prof. Viktor Todorov"
-                                                },
-                                                xAxis: {
-                                                    minPadding: 0,
-                                                    maxPadding: 0,
-                                                    overscroll: 0,
-                                                    ordinal: true,
-                                                    title: {
-                                                        text: "Date"
-                                                    },
-                                                    labels: {
-                                                        overflow: 'justify',
-                                                        format: "{value:%Y-%m}"
-                                                    },
-                                                    showLastLabel: true,
-                                                    index: 0,
-                                                    isX: true,
-                                                    type: 'datetime',
-                                                    categories: null,
-                                                    startOnTick: false,
-                                                    endOnTick: false,
-                                                    dateTimeLabelFormats: {
-                                                        day: "%e :%b"
-                                                    }
-                                                },
-                                                yAxis: {
-                                                    labels: {
-                                                        y: -2
-                                                    },
-                                                    opposite: true,
-                                                    showLastLabel: false,
-                                                    title: {
-                                                        text: null
-                                                    },
-                                                    index: 0
-                                                },
-                                                series: [
-                                                    {
-                                                        lineWidth: 1,
-                                                        type: 'line',
-                                                        tooltip: {
-                                                            xDateFormat: "%m-%d-%Y"
-                                                        },
-                                                        data: jsonData
-                                                    }
-                                                ],
-                                                pane: {
-                                                    background: []
-                                                },
-                                                responsive: {
-                                                    rules: []
-                                                },
-                                                tooltip: {
-                                                    pointFormat: "<span style=\"color:{point.color}\">●</span> LJV_SPX: <b>{point.y}</b><br/>"
-                                                },
-                                                plotOptions: {
-                                                    series: {
-                                                        dataLabels: {
-                                                            style: {
-                                                                textOutline: false,
-                                                                textShadow: false
-
-                                                            }
-                                                        },
-                                                        states: {
-                                                            hover: {
-                                                                marker: {
-                                                                    states: {
-                                                                        hover: {
-                                                                            radiusPlus: 2
-                                                                        }
-                                                                    }
-                                                                },
-                                                                lineWidthPlus: 0
-                                                            },
-                                                            inactive: {}
-                                                        }
-                                                    },
-                                                    line: {
-                                                        tooltip: {
-                                                            xDateFormat: "%m-%d-%Y"
-                                                        },
-                                                        animation: {
-                                                            duration: 3000
-                                                        }
-                                                    }
-                                                },
-                                                accessibility: {
-                                                    pointDateFormat: "%m-%d-%Y"
-                                                },
-                                                data: {
-                                                    // csvURL: window.location.origin + "/pdf/data.csv",
-                                                    enablePolling: true,
-                                                    dataRefreshRate: 86400
-                                                },
-                                                chartarea: {},
-                                                plotarea: {},
-                                                credits: {},
-                                                googleSpreadsheetKey: false,
-                                                googleSpreadsheetWorksheet: false
-
-                                            };
-
-                                        $containers.each(function(i, e){
-                                            chartConfig.chart.renderTo = e;
-                                            new Highcharts.StockChart(chartConfig);
-                                        });
-
-
-                                    });
-
-                                });
-
-                            </script>
 
                         </div>
 
@@ -685,7 +531,7 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/-MmegBVta/"
+                                        data-lazy-load-src="https://cloud.highcharts.com/embed/-MmegBVta/"  src=""
                                         style="border: 0;  height: 500px"></iframe>
 
 
@@ -694,7 +540,7 @@
                                 <h2 style=" color:white;">S&P 500 Index</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/-MmegBVta/"
+                                        data-lazy-load-src="https://cloud.highcharts.com/embed/-MmegBVta/" src=""
                                         style="border: 0;  height: 500px"></iframe>
 
                             </div>
@@ -710,7 +556,7 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/yVlP91gRt/"
+                                        data-lazy-load-src="https://cloud.highcharts.com/embed/yVlP91gRt/" src=""
                                         style="border: 0; height: 500px"></iframe>
 
                             </div>
@@ -718,7 +564,7 @@
                                 <h2 style=" color:white;">S&P 500 Index</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/yVlP91gRt/"
+                                        data-lazy-load-src="https://cloud.highcharts.com/embed/yVlP91gRt/" src=""
                                         style="border: 0; height: 500px"></iframe>
 
                             </div>
@@ -734,14 +580,14 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/teiR2UUfh/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/teiR2UUfh/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
                                 <h2 style=" color:white;">Dow Jones Industrial Average</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/teiR2UUfh/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/teiR2UUfh/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -758,14 +604,14 @@
                                 </div>
 
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/4IRC305Vo/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/4IRC305Vo/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
                                 <h2 style=" color:white;">Dow Jones Industrial Average</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/4IRC305Vo/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/4IRC305Vo/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -781,14 +627,14 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/w3QtoFoC8/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/w3QtoFoC8/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
                                 <h2 style=" color:white;">Dow Jones Industrial Average</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/w3QtoFoC8/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/w3QtoFoC8/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -804,7 +650,7 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/8YSPQDdLM/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/8YSPQDdLM/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
@@ -812,7 +658,7 @@
                                 <br>
 
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/8YSPQDdLM/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/8YSPQDdLM/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                         </div>
@@ -828,14 +674,14 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/zVsQhU3sF/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/zVsQhU3sF/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
                                 <h2 style=" color:white;">NASDAQ 100 Index</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/zVsQhU3sF/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/zVsQhU3sF/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -852,14 +698,14 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/pMbVnupTM/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/pMbVnupTM/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
                                 <h2 style=" color:white;">NASDAQ 100 Index</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/pMbVnupTM/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/pMbVnupTM/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -876,14 +722,14 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/9QQYbdciS/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/9QQYbdciS/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
                                 <h2 style=" color:white;">Russell 2000 Index</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/9QQYbdciS/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/9QQYbdciS/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -900,7 +746,7 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/IPVYDvr56/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/IPVYDvr56/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -908,7 +754,7 @@
                                 <h2 style=" color:white;">Russell 2000 Index</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/IPVYDvr56/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/IPVYDvr56/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -925,7 +771,7 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/5bo7l0vzL/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/5bo7l0vzL/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -933,7 +779,7 @@
                                 <h2 style=" color:white;">Russell 2000 Index</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/5bo7l0vzL/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/5bo7l0vzL/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -950,14 +796,14 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/TAzFWcgR6/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/TAzFWcgR6/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
                                 <h2 style=" color:white;">iShares MSCI Emerging Markets ETF</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/TAzFWcgR6/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/TAzFWcgR6/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -974,14 +820,14 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/WWqe2juxA/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/WWqe2juxA/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
                                 <h2 style=" color:white;">iShares MSCI Emerging Markets ETF</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/WWqe2juxA/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/WWqe2juxA/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -998,14 +844,14 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/3rY6YTwOH/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/3rY6YTwOH/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
                                 <h2 style=" color:white;">iShares MSCI Emerging Markets ETF</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/3rY6YTwOH/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/3rY6YTwOH/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -1022,14 +868,14 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/pOvVHbzYr/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/pOvVHbzYr/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
                                 <h2 style=" color:white;">iShares MSCI EAFE ETF</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/pOvVHbzYr/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/pOvVHbzYr/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -1046,14 +892,14 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/pTWO-FxVd/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/pTWO-FxVd/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
                                 <h2 style=" color:white;">iShares MSCI EAFE ETF</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/pTWO-FxVd/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/pTWO-FxVd/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -1070,14 +916,14 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/5HmlQ6zn0/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/5HmlQ6zn0/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
                                 <h2 style=" color:white;">iShares MSCI EAFE ETF</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/5HmlQ6zn0/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/5HmlQ6zn0/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -1094,14 +940,14 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/YMLi24YsB/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/YMLi24YsB/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
                                 <h2 style=" color:white;">iShares China Large-Cap ETF</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/YMLi24YsB/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/YMLi24YsB/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -1118,7 +964,7 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/juoFgoQ1B/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/juoFgoQ1B/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -1126,7 +972,7 @@
                                 <h2 style=" color:white;">iShares China Large-Cap ETF</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/juoFgoQ1B/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/juoFgoQ1B/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -1143,14 +989,14 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/YbCoKWhIN/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/YbCoKWhIN/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
                                 <h2 style=" color:white;">iShares China Large-Cap ETF</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/YbCoKWhIN/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/YbCoKWhIN/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -1167,14 +1013,14 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/n_MJcqF_Y/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/n_MJcqF_Y/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
                                 <h2 style=" color:white;">iShares MSCI Brazil ETF</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/n_MJcqF_Y/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/n_MJcqF_Y/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -1191,14 +1037,14 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/4WEyc-Ty1/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/4WEyc-Ty1/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
                                 <h2 style=" color:white;">iShares MSCI Brazil ETF</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/4WEyc-Ty1/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/4WEyc-Ty1/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -1215,14 +1061,14 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/Ix1ZwOkNK/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/Ix1ZwOkNK/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
                                 <h2 style=" color:white;">iShares MSCI Brazil ETF</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/Ix1ZwOkNK/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/Ix1ZwOkNK/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -1239,14 +1085,14 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/jrEJQZ-jZ/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/jrEJQZ-jZ/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
                                 <h2 style=" color:white;">iShares MSCI Mexico ETF</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/jrEJQZ-jZ/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/jrEJQZ-jZ/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -1263,14 +1109,14 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/l1cMYrckQ/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/l1cMYrckQ/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
                                 <h2 style=" color:white;">iShares MSCI Mexico ETF</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/l1cMYrckQ/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/l1cMYrckQ/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -1287,14 +1133,14 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/fk4RY3QKo/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/fk4RY3QKo/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
                                 <h2 style=" color:white;">iShares MSCI Mexico ETF</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/fk4RY3QKo/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/fk4RY3QKo/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -1311,14 +1157,14 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/hteSN7R8T/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/hteSN7R8T/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
                                 <h2 style=" color:white;">SPDR Gold Shares</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/hteSN7R8T/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/hteSN7R8T/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -1335,14 +1181,14 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/u2f1fWc4C/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/u2f1fWc4C/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
                                 <h2 style=" color:white;">SPDR Gold Shares</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/u2f1fWc4C/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/u2f1fWc4C/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -1359,14 +1205,14 @@
                                     </div>
                                 </div>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/bhnwR1W3E/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/bhnwR1W3E/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
                             </div>
                             <div class="visible-xs text-center">
                                 <h2 style=" color:white;">SPDR Gold Shares</h2>
                                 <br>
                                 <iframe class="highcharts-iframe col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                        src="https://cloud.highcharts.com/embed/bhnwR1W3E/"
+                                        src=""   data-lazy-load-src="https://cloud.highcharts.com/embed/bhnwR1W3E/"
                                         style="border: 0; width: 100%; height: 500px"></iframe>
 
                             </div>
@@ -1683,17 +1529,29 @@
             <!-- Submit the Form to Google Using "AJAX" -->
 
             <script data-cfasync="false" type="text/javascript" src="js/form-submission-handler.js"></script>
+
         </div>
 
     </div>
 
 </div>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script>
 
+    $('#carousel-slider').on('slide.bs.carousel', function(e) {
 
+        $(e.relatedTarget).find('iframe').each(function() {
+            var $this = $(this);
+            var src = $this.data('lazy-load-src');
 
+            if (typeof src !== "undefined" && src != "") {
+                $this.attr('src', src)
+                $this.data('lazy-load-src', '');  // clean up
+            }
+        });
+    });
 
-
+</script>
 
 
 </body>
