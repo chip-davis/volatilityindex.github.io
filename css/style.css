@@ -128,9 +128,9 @@ a:hover {
 
 .chartnav a , .dropdown-btn {
     padding: 6px 7px 6px 16px;
-    font-size: 15px;
+    font-size: 16px;
     color: #4C6085;
-
+    font-weight: bolder;
     display: block;
     border: none;
     background: none;
@@ -144,7 +144,7 @@ a:hover {
     left:0;
     color: #f1f1f1;
     background: #4C6085;
-    font-size: 17px;
+    font-size: 18px;
     display: block;
 }
 
