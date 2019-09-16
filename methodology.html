@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="css/animate.css">
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" />
+    <script src="js/local.js"></script>
 
 </head>
 <body>
@@ -57,7 +58,14 @@
                     <ul class="nav nav-tabs" role="tablist" id="myList">
                         <li role="presentation"><a href="index.html" class="myList"
                                                    onClick="changeClass(this)">Home</a></li>
-                        <li role="presentation"><a href="methodology.html" class="myList active" onClick="changeClass(this)">Methodology</a>
+                        <li role="presentation">
+                            <div class="drop_down" style="color: #555;cursor: default;background-color: #fff;border: 1px solid #fff;border-bottom-color:#fff;">
+                                <button class="dropbtn" style="background-color: #fff; color:#4C6085;">Methodology</button>
+                                <div class="dropdown-content">
+                                    <a href="methodology.html" class="myList" onClick="changeClass(this)">Tail Index</a>
+                                    <a href="methodology.html" class="myList" onClick="changeClass(this)">Volatility</a>
+                                </div>
+                            </div>
                         </li>
                         <li role="presentation"><a href="research.html" class="myList"
                                                    onClick="changeClass(this)">Research</a></li>
